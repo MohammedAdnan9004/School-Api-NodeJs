@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "8aee88e8-8b1c-4869-ae52-4ae14428ec34",
+		"name": "School Api Management",
+		"description": "APIs for adding and listing schools based on location.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47968587",
+		"_collection_link": "https://adnankhan-344103.postman.co/workspace/Adnan-Khan's-Workspace~666b6f58-eafb-49b5-882e-4af4563c1ffd/collection/47968587-8aee88e8-8b1c-4869-ae52-4ae14428ec34?action=share&source=collection_link&creator=47968587"
+	},
+	"item": [
+		{
+			"name": "Add School Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mumbra Public School\",\r\n    \"address\": \"kausa Mumbra Thane\",\r\n    \"latitude\": 26.8955,\r\n    \"longitude\": 97.3540\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/addSchool",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"addSchool"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add School Api",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Abdullah Patel High School\",\r\n    \"address\": \"kausa Mumbra Thane\",\r\n    \"latitude\": 67.8955,\r\n    \"longitude\": 47.3540\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/addSchool",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"addSchool"
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "List Schools API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mumbra Public School\",\r\n    \"address\": \"kausa Mumbra Thane\",\r\n    \"latitude\": 26.8955,\r\n    \"longitude\": 97.3540\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/listSchools?latitude=12.7041&longitude= 91.1025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"listSchools"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "12.7041"
+						},
+						{
+							"key": "longitude",
+							"value": " 91.1025"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Schools API",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mumbra Public School\",\r\n    \"address\": \"kausa Mumbra Thane\",\r\n    \"latitude\": 26.8955,\r\n    \"longitude\": 97.3540\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/listSchools?latitude=38.7041&longitude= 71.1025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"listSchools"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "38.7041"
+								},
+								{
+									"key": "longitude",
+									"value": " 71.1025"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/listSchools?latitude=38.7041&longitude= 71.1025",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mumbra Public School\",\r\n    \"address\": \"kausa Mumbra Thane\",\r\n    \"latitude\": 26.8955,\r\n    \"longitude\": 97.3540\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/listSchools?latitude=38.7041&longitude= 71.1025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"listSchools"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "38.7041"
+						},
+						{
+							"key": "longitude",
+							"value": " 71.1025"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/addSchool",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Abdullah Patel High School\",\r\n    \"address\": \"kausa Mumbra Thane\",\r\n    \"latitude\": 67.8955,\r\n    \"longitude\": 47.3540\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/addSchool",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"addSchool"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
