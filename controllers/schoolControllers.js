@@ -15,7 +15,7 @@ exports.addSchool = async (req, res) => {
 
     const sql =
       "INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)";
-    await pool.execute(sql, [name, address, latitude, longitude]);
+    await pool.query(sql, [name, address, latitude, longitude]);
 
     res.status(201).json({ message: "School added successfully" });
   } catch (error) {
@@ -39,10 +39,18 @@ exports.listSchools = async (req, res) => {
     const userLon = parseFloat(longitude);
 
     const schoolsWithDistance = schools.map((school) => {
-      const distance = Math.sqrt(
-        Math.pow(userLat - school.latitude, 2) +
-          Math.pow(userLon - school.longitude, 2)
-      );
+      const R = 6371;
+      const dLat = ((school.latitude - userLat) * Math.PI) / 180;
+      const dLon = ((school.longitude - userLon) * Math.PI) / 180;
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos((userLat * Math.PI) / 180) *
+          Math.cos((school.latitude * Math.PI) / 180) *
+          Math.sin(dLon / 2) *
+          Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c;
+
       return { ...school, distance };
     });
 
